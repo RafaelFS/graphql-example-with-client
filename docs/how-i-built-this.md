@@ -23,3 +23,18 @@ Alongside importing the old components, I also mocked some data to populate them
 
 ![Image showing the results after the previous steps: two cards showing Rick and Morty from the popular TV show.](./assets/step2.png)
 
+
+## REST API call
+To provide a good comparison, I first did a version consuming the [REST Version](https://rickandmortyapi.com/documentation/#rest) of the Rick Morty API.
+
+It is a simple browser fetch call to the API, consuming the Charact List endpoint (https://rickandmortyapi.com/api/character/) and treating the response.
+
+
+## Replacing with GraphQL
+
+This mainly follows the [Apollo Client React guide](https://www.apollographql.com/docs/react/get-started/), ignoring the `@apollo/react-hooks`.
+
+1) Runs `yarn add apollo-boost graphql` or `npm install apollo-boost graphql` - Installs Apollo Boost, a bundle of packages that provide an Apollo Client with sensible defaults. Also installs the GraphQL base JS package.
+2) Replaces the fetch call to the REST API version of Rick and Morty API with:
+    - An Apollo Client instatiated pointing to https://rickandmortyapi.com/graphql/
+    - A GraphQL Query written in the playground available in https://rickandmortyapi.com/graphql/ (check https://www.graphqlbin.com/v2/XrwPfO for a version with the query already built). It only selects the used fields (id, name, species, image). The GraphQL query is written as a string literal that is interpreted by gql - a library focused on this task - and passed to the client. 
