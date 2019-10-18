@@ -1,7 +1,26 @@
+import ApolloClient, { gql } from "apollo-boost";
+
+const client = new ApolloClient({
+  uri: "https://rickandmortyapi.com/graphql"
+});
+
 function getCharacters() {
-  return fetch("https://rickandmortyapi.com/api/character/").then(response => {
-    return response.json().then(responseJson => responseJson.results);
-  });
+  return client
+    .query({
+      query: gql`
+        {
+          characters {
+            results {
+              name
+              id
+              species
+              image
+            }
+          }
+        }
+      `
+    })
+    .then(response => response.data.characters.results);
 }
 
 const CharacterRepository = {
