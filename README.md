@@ -1,5 +1,7 @@
 # GraphQL Client Example
 
+The simplest example connecting to a GraphQL API. Uses the generic javascript Apollo client, that works with plain javascript or with any framework.
+
 ## Companion Repositories
 **Base UI repository** - https://github.com/RafaelFS/graphql-example-layout 
 
@@ -19,10 +21,7 @@ Example connecting to a GraphQL API. Uses the React specific components to do so
 **GraphQL Typescript Example** - TBA -
 Build upon the last examples by adding Typescript and  using the automatic code generation.
 
-
----
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+*This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).*
 
 ## Available Scripts
 
